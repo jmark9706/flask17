@@ -24,6 +24,9 @@ def hello():
     humidity = request.args.get("humidity")
     temp = request.args.get("temp")
     baro = request.args.get("baro")
+    fs=open("obs.txt", "w")
+    fs.write("temperature "+temp+" humidity "+humidity+" pressure " + baro +"\n")
+    fs.close()
     return '''<h1>The temperature is: {}</h1>
               <h1>The humidity is: {}</h1>
                <h1>The barometric pressure is: {}</h1>'''.format(temp, humidity, baro)
