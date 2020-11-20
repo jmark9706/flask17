@@ -24,6 +24,7 @@ def hello():
     humidity = request.args.get("humidity")
     temp = request.args.get("temp")
     baro = request.args.get("baro")
+    device = request.args.get("device")
     fs=open("obs.txt", "w")
     fs.write("temperature "+temp+" humidity "+humidity+" pressure " + baro +"\n")
     fs.close()
