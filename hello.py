@@ -21,12 +21,14 @@ def login():
 def hello():
     humidity = request.args.get("humidity")
     temp = request.args.get("temp")
-    return '''<h1>The temp value is: {}</h1>
-              <h1>The humidity value is: {}</h1>'''.format(temp, humidity)
+    baro = request.args.get("baro")
+    return '''<h1>The temperature is: {}</h1>
+              <h1>The humidity is: {}</h1>
+               <h1>The barometric pressure is: {}</h1>'''.format(temp, humidity, baro)
 
 @app.route('/')
 def hello_world2():
-    return 'Hello, World!'
+    return 'Flask 17 Hello, World!'
     
 @app.route('/bob')
 def hello_world():
