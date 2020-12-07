@@ -1,0 +1,1 @@
+device 0001 temperature 75.78 humidity 41.10 pressure 101304.39 altitude 1.72

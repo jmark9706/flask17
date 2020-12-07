@@ -20,6 +20,8 @@ def login():
 @app.route('/parms')
 def hello():
     humidity = request.args.get("humidity")
+    device = request.args.get("device")
+    alt = request.arg.get("alt")
     temp = request.args.get("temp")
     baro = request.args.get("baro")
     return '''<h1>The temperature is: {}</h1>

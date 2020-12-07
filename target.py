@@ -21,12 +21,20 @@ def login():
     
 @app.route('/parms')
 def hello():
+# init to legal defaults
+    humidity = " NR "
+    device = " NR "
+    alt = " NR "
+    temp = " NR "
+    baro = " NR "
     humidity = request.args.get("humidity")
+    device = request.args.get("device")
+    alt = request.args.get("alt")
     temp = request.args.get("temp")
     baro = request.args.get("baro")
     device = request.args.get("device")
     fs=open("obs.txt", "w")
-    fs.write("temperature "+temp+" humidity "+humidity+" pressure " + baro +"\n")
+    fs.write("device "+device+" temperature "+temp+" humidity "+humidity+" pressure " + baro +" altitude "+alt+"\n")
     fs.close()
     return '''<h1>The temperature is: {}</h1>
               <h1>The humidity is: {}</h1>
