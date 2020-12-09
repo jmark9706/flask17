@@ -1,1 +1,1 @@
-device 0001 temperature 75.78 humidity 41.10 pressure 101304.39 altitude 1.72
+<h1>Tue Dec  8 19:40:14 2020 device  0001 temperature 71.26 humidity 41.13 pressure 101680.50 altitude -29.55</H1>

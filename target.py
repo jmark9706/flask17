@@ -2,6 +2,7 @@
 
 from flask import Flask
 from flask import request, escape
+import time
 
 app = Flask(__name__)
 
@@ -33,8 +34,10 @@ def hello():
     temp = request.args.get("temp")
     baro = request.args.get("baro")
     device = request.args.get("device")
+    seconds = time.time()
+    local_time = time.ctime(seconds)
     fs=open("obs.txt", "w")
-    fs.write("device "+device+" temperature "+temp+" humidity "+humidity+" pressure " + baro +" altitude "+alt+"\n")
+    fs.write("<h1>"+local_time +" device  "+ device +" temperature "+ temp +" humidity "+ humidity +" pressure " + baro + " altitude " + alt +"</H1>\n")
     fs.close()
     return '''<h1>The temperature is: {}</h1>
               <h1>The humidity is: {}</h1>
@@ -42,7 +45,9 @@ def hello():
 
 @app.route('/')
 def hello_world2():
-    return 'Target Web Server Hello, World!'
+    fsi = open("obs.txt", "r")
+    dat = fsi.read()
+    return dat
     
 @app.route('/bob')
 def hello_world():
