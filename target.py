@@ -41,7 +41,7 @@ def hello():
     seconds = time.time()
     local_time = time.ctime(seconds)
     fs=open("obs.txt", "w")
-    fs.write("<h1>"+local_time +" device  "+ device +" temperature "+ temp +" humidity "+ humidity +" pressure mb " + str (mb_flt) + " pressure in. hg. " + str(hg_flt) + " altitude " + alt +"</H1>\n")
+    fs.write("<h1>"+local_time +" device  "+ device +" temperature "+ temp +" humidity "+ humidity +" pressure mb " + "{:10.2f}".format(mb_flt) + " pressure in. hg. " + "{:10.2f}".format(hg_flt) + " altitude " + alt +"</H1>\n")
     fs.close()
     return '''<h1>The temperature is: {}</h1>
               <h1>The humidity is: {}</h1>

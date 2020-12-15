@@ -1,1 +1,1 @@
-<h1>Mon Dec 14 18:56:22 2020 device  0001 temperature 43.43 humidity 83.86 pressure mb 1017.1211 pressure in. hg. 30.03568779511 altitude -32.17</H1>
+<h1>Mon Dec 14 21:31:59 2020 device  0001 temperature 41.49 humidity 89.04 pressure mb    1016.16 pressure in. hg.      30.01 altitude -24.16</H1>
