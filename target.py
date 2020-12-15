@@ -34,10 +34,14 @@ def hello():
     temp = request.args.get("temp")
     baro = request.args.get("baro")
     device = request.args.get("device")
+    # convert millibars to float
+    mb_flt = float(baro) / 100
+    # convert to inches of hg
+    hg_flt =  0.0295301 * mb_flt
     seconds = time.time()
     local_time = time.ctime(seconds)
     fs=open("obs.txt", "w")
-    fs.write("<h1>"+local_time +" device  "+ device +" temperature "+ temp +" humidity "+ humidity +" pressure " + baro + " altitude " + alt +"</H1>\n")
+    fs.write("<h1>"+local_time +" device  "+ device +" temperature "+ temp +" humidity "+ humidity +" pressure mb " + str (mb_flt) + " pressure in. hg. " + str(hg_flt) + " altitude " + alt +"</H1>\n")
     fs.close()
     return '''<h1>The temperature is: {}</h1>
               <h1>The humidity is: {}</h1>
