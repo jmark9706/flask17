@@ -43,6 +43,14 @@ def hello():
     fs=open("obs.txt", "w")
     fs.write("<h1>"+local_time +" device  "+ device +" temperature "+ temp +" humidity "+ humidity +" pressure mb " + "{:10.2f}".format(mb_flt) + " pressure in. hg. " + "{:10.2f}".format(hg_flt) + " altitude " + alt +"</H1>\n")
     fs.close()
+    # append the reading to log file
+    fs2 = open("log.txt", "a")
+    fs2.write("<h1>"+local_time +" device  "+ device +" temperature "+ temp +" humidity "+ humidity +" pressure mb " + "{:10.2f}".format(mb_flt) + " pressure in. hg. " + "{:10.2f}".format(hg_flt) + " altitude " + alt +"</H1>\n")
+    fs2.close()
+    # write csv
+    fs3 = open("tlog.csv", "a")
+    fs3.write(local_time + "," + device +","+ temp +","+ humidity +","+"{:10.2f}".format(mb_flt) +","+"{:10.2f}".format(hg_flt)+","+alt+"\n")
+    fs3.close()
     return '''<h1>The temperature is: {}</h1>
               <h1>The humidity is: {}</h1>
                <h1>The barometric pressure is: {}</h1>'''.format(temp, humidity, baro)

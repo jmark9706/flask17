@@ -62,3 +62,11 @@ PS C:\Users\John\Documents\venv_flask> python -m flask run --host=0.0.0.0
 10.0.0.80 - - [06/Dec/2020 10:18:11] "[37mGET / HTTP/1.1[0m" 200 -
 10.0.0.80 - - [06/Dec/2020 10:18:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
 
+Note: weird fail 23 January 2021: I replaced the BME280 that I destroyed with rain.  When I brought everything up, I had an exception in line 38
+of target.py on the float conversion of baro.  Apparently it showed up as an NR?  Then it went away and started working.
+
+Note to self: on the flask host, disable the public firewall so the web server can be seen externally to the PC
+
+git note:  git push -u origin
+
+
